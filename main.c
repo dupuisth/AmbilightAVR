@@ -1,11 +1,11 @@
-// 24 MHz
-#define F_CPU 24000000
-#define WS_LED_COUNT 64
+#include "config.h"
 
 #include <avr/io.h>
 #include <avr/cpufunc.h>
+#include <util/delay.h>
 
 #include "ws.h"
+#include "ws_usart.h"
 
 
 void CLOCK_init(void) {
@@ -21,7 +21,11 @@ void CLOCK_init(void) {
 
 int main(void) {
     CLOCK_init();
+    ws_usart_init();
+    ws_fill(255, 0, 0);
     
     while (1) {
+        ws_usart_send_pixels();
+        _delay_ms(55);
     }
 }
