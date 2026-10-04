@@ -1,12 +1,16 @@
 // 24 MHz
 #define F_CPU 24000000
+#define WS_LED_COUNT 64
 
 #include <avr/io.h>
 #include <avr/cpufunc.h>
 
+#include "ws.h"
+
+
 void CLOCK_init(void) {
     // Select internal high frequency osc
-    ccp_write_io((void*)(&CLKCTRL.MCLKCTRLA), CLKCTRL_CLKSEL_OSCHF_gc)
+    ccp_write_io((void*)(&CLKCTRL.MCLKCTRLA), CLKCTRL_CLKSEL_OSCHF_gc);
     
     // Set the frequency to 24MHz
     ccp_write_io((void*)&CLKCTRL.OSCHFCTRLA, CLKCTRL_FRQSEL_24M_gc);
