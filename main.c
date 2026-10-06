@@ -22,10 +22,20 @@ void CLOCK_init(void) {
 int main(void) {
     CLOCK_init();
     ws_usart_init();
-    ws_fill(255, 0, 0);
+    
+    uint8_t c = 0;
+    uint8_t dir = 0xFF;
     
     while (1) {
         ws_usart_send_pixels();
-        _delay_ms(55);
+         
+        c = c + (dir ? 1 : -1);
+        if (((c == 64) & dir) || ((c == 0) & !dir)) {
+            dir = ~dir;
+        }
+ 
+        ws_fill(c, c, c);
+        
+        
     }
 }

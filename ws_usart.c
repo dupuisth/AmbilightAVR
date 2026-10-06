@@ -58,8 +58,11 @@ void ws_usart_send_pixel(uint8_t r, uint8_t g, uint8_t b)
 
 void ws_usart_send_pixels(void) {
     for (uint8_t i = 0; i < WS_LED_COUNT; i++) {
-        ws_usart_send_triplet(ws_pixels[i][0]);
-        ws_usart_send_triplet(ws_pixels[i][1]);
-        ws_usart_send_triplet(ws_pixels[i][2]);
+        ws_usart_send_pixel(ws_pixels[i][0], ws_pixels[i][1], ws_pixels[i][2]);
     }
+    
+    // Force reset
+    // TODO: Check if necessary, maybe just do it if we are too close from
+    //  another frame...
+    _delay_us(300);
 }
