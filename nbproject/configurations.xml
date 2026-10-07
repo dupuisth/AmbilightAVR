@@ -7,6 +7,7 @@
       <itemPath>ws_usart.h</itemPath>
       <itemPath>ws.h</itemPath>
       <itemPath>config.h</itemPath>
+      <itemPath>ws_effect.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -24,6 +25,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>ws.c</itemPath>
       <itemPath>ws_usart.c</itemPath>
+      <itemPath>ws_effect.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

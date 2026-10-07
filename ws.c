@@ -4,9 +4,7 @@
 
 uint8_t ws_pixels[WS_LED_COUNT][3];
 
-void ws_set_pixel(uint8_t pixel, uint8_t r, uint8_t g, uint8_t b) {
-    assert(pixel > 0 && pixel < WS_LED_COUNT);
-    
+void ws_set_pixel(uint8_t pixel, uint8_t r, uint8_t g, uint8_t b) {    
     ws_pixels[pixel][0] = r;
     ws_pixels[pixel][1] = g;
     ws_pixels[pixel][2] = b;

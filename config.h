@@ -8,7 +8,7 @@ extern "C" {
 // 24 MHz
 #define F_CPU 24000000
     
-#define WS_LED_COUNT 120
+#define WS_LED_COUNT 160
  
 #ifdef	__cplusplus
 }
